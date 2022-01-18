@@ -3,10 +3,25 @@
     padding: 0;
     box-sizing: border-box;
 }
+.micron{
+    border: 0px;
+    border-collapse: collapse;
+    background: linear-gradient(
+        to left,
+        pink 0%,
+        pink 50%,
+        skyblue 50%,
+        skyblue 100% 
+    );
+    transform: rotate(-90deg);
+}
 #Layer_1{
     height: 600px;
-    transform:rotate(-90deg); 
+    transform:rotate(0deg); 
     
+}
+#Layer_1.Marking{
+    animation: move 1s linear ;
 }
 .write{
     font-size: 40px;
@@ -22,21 +37,20 @@
         skyblue 100% 
     );
 }
-{/*
-#Cap_Front,
+
+/*#Cap_Front,
 #Marking{
-   animation: move 2s infinite linear ;
-   transform-origin: center;
-   transform-box: fill-box;
-}
+   animation: move 2s  linear ;
+  
+}*/
 @keyframes move{
     from{
         transform: translateX(0px);
          
     }
     to{
-         transform: translateX(-90px);
+         transform: translateX(-200px);
          
     }
 
-*/}
+} 
