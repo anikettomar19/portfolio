@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#Layer_1{
+    height: 600px;
+    transform:rotate(-90deg); 
+    
+}
+.write{
+    font-size: 40px;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+        to bottom,
+        pink 0%,
+        pink 50%,
+        skyblue 50%,
+        skyblue 100% 
+    );
+}
+{/*
+#Cap_Front,
+#Marking{
+   animation: move 2s infinite linear ;
+   transform-origin: center;
+   transform-box: fill-box;
+}
+@keyframes move{
+    from{
+        transform: translateX(0px);
+         
+    }
+    to{
+         transform: translateX(-90px);
+         
+    }
+
+*/}
