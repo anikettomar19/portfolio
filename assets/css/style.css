@@ -3,33 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
-.micron{
-    border: 0px;
-    border-collapse: collapse;
-    background: linear-gradient(
-        to left,
-        pink 0%,
-        pink 50%,
-        skyblue 50%,
-        skyblue 100% 
-    );
-    transform: rotate(-90deg);
-}
-#Layer_1{
-    height: 600px;
-    transform:rotate(0deg); 
-    
-}
-#Layer_1.Marking{
-    animation: move 1s linear ;
-}
-.write{
-    font-size: 40px;
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(
+body{
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 0;
+   background: linear-gradient(
         to bottom,
         pink 0%,
         pink 50%,
@@ -37,23 +17,108 @@
         skyblue 100% 
     );
 }
+.write{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    
+}
+:root {
+    --squish-animation-time: 50ms;
+    --progress-animation-time: 10ms;
+    --btn-width: 48px;
+    --btn-height: 600px;
+  }
+.btn {
+    position: relative;
+    background :linear-gradient(
+        to left,
+        pink 0%,
+        pink 50%,
+        skyblue 50%,
+        skyblue 100% 
+    ); 
+    border: none;
+    transform: rotate(-90deg);
+    border-radius: .125em;
+    width: var(--btn-width);
+    height: var(--btn-height);
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+  }
 
-/*#Cap_Front,
-#Marking{
-   animation: move 2s  linear ;
+  .btn.animating {
+    background-color: transparent;
+    color: transparent;
+    user-select: none;
+    cursor: default;
+    animation: hide 0ms calc(var(--squish-animation-time) + var(--progress-animation-time)) forwards;
+  }
+
+  .btn::before {
+    content: "";
+    display: none;
+    position: absolute;
+    background-color: linear-gradient(
+        to left,
+        pink 0%,
+        pink 50%,
+        skyblue 50%,
+        skyblue 100% 
+    ); ;
+    inset: 0;
+    border-radius: .125em;
+    
+    animation-fill-mode: forwards;
+  }
   
-}*/
-@keyframes move{
-    from{
-        transform: translateX(0px);
-         
+  
+  .btn::after {
+    content: "";
+    display: none;
+    position: absolute;
+    background-color: linear-gradient(
+        to left,
+        pink 0%,
+        pink 50%,
+        skyblue 50%,
+        skyblue 100% 
+    ); ;
+    left: 51%;
+    right: 51%;
+    top: 45%;
+    bottom: 45%;
+    border-radius: .25em;
+    animation-fill-mode: forwards;
+  }
+  
+  .btn.animating::before,
+  .btn.animating::after {
+    display: block;
+  }
+  
+  
+  @keyframes hide {
+    100% {
+     opacity: 0%;
     }
-    to{
-         transform: translateX(-200px);
-         
-    }
+  }
+  
+ 
 
-} 
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width:480px) {
     
