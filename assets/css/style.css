@@ -54,3 +54,33 @@
     }
 
 } 
+
+@media (max-width:480px) {
+    
+    .write{
+        font-size: 40px;
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(
+            to bottom,
+            pink 0%,
+            pink 50%,
+            skyblue 50%,
+            skyblue 100% 
+        );
+    }
+    .micron{
+        border: 0px;
+        border-collapse: collapse;
+        background: linear-gradient(
+            to bottom,
+            pink 0%,
+            pink 50%,
+            skyblue 50%,
+            skyblue 100% 
+        );
+        transform: rotate(0deg);
+    }
+}
