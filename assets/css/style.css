@@ -2,7 +2,77 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
+.text1{
+  top: 66%;
+    font-size: clamp(60px, 5vw, 80px);
+    font-family: 'Mea Culpa', cursive;
+    font-weight: 900;
+    font-style: normal;
+    color: #B2A89F;
+    padding: 0;
+    transform: translateX(-300px);
+    font-size: 44px;
+    padding: 0;
+}
+.text2{
+    top: 66%;
+    margin-left:0px;
+    font-size: clamp(60px, 5vw, 80px);
+    font-family: 'Mea Culpa', cursive;
+    font-weight: 900;
+    font-style: normal;
+    color: #B2A89F;
+    font-size: 40px;
+    padding: 0;
+    transform: rotate(90deg);
+
+}
+.overlay{
+  position: absolute ;
+  width: 100%;
+  height: 100%;
+  background: #B2A89F;
+  left: 0;
+  top: 0;
+  transform-origin: left ;
+}
+.transition-wipe {
+  
+  transition: 2s cubic-bezier(0,-0.01, 0, 1.33);
+  transition-delay: calc(var(--button-delay-time)*.7);
+  transform: scaleX(0);
+}
+
+html.is-leaving .transition-wipe {
+   transform: scaleX(100)
+  
+}
+.transition-swipe {
+  opacity: 1;
+  transition: 1000ms;
+  
+  transform: translateX(0);
+  transform-origin: left;
+}
+
+html.is-leaving .transition-swipe {
+  transform: translateX(0);
+}
+
+.btn {
+  transition: 500ms;
+  transition-duration: var(--button-delay-time);
+  transform: translateX(0);
+}
+
+html.is-animating .btn {
+  transform: translateX(1000px);
+}
+
+
+
 
 body{
    min-height: 100vh;
@@ -10,40 +80,33 @@ body{
    justify-content: center;
    align-items: center;
    margin: 0;
+   background-color: black
+  
    
 }
 .write{
     width: 100%;
     min-height: 100vh;
     display: flex;
+    transform: translateX(-50px);
     justify-content: center;
     align-items: center;
     margin: 0;
-    background: linear-gradient(
-         to bottom,
-         pink 0%,
-         pink 50%,
-         skyblue 50%,
-         skyblue 100% 
-     );
+   
     
 }
 :root {
     --squish-animation-time: 50ms;
     --progress-animation-time: 10ms;
+    --button-delay-time: 200ms;
     --btn-width: 48px;
     --btn-height: 600px;
   }
 .btn {
     position: relative;
-    background :linear-gradient(
-        to left,
-        pink 0%,
-        pink 50%,
-        skyblue 50%,
-        skyblue 100% 
-    ); 
-    border: none;
+    background: #000;
+    border: white;
+    border-radius: 2px;
     transform: rotate(-90deg);
     border-radius: .125em;
     width: var(--btn-width);
@@ -110,20 +173,6 @@ body{
     }
   }
   
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media (max-width:480px) {
     
     .write{
@@ -132,24 +181,10 @@ body{
         height: 100vh;
         justify-content: center;
         align-items: center;
-        background: linear-gradient(
-            to bottom,
-            pink 0%,
-            pink 50%,
-            skyblue 50%,
-            skyblue 100% 
-        );
     }
-    .micron{
+    .btn{
         border: 0px;
         border-collapse: collapse;
-        background: linear-gradient(
-            to bottom,
-            pink 0%,
-            pink 50%,
-            skyblue 50%,
-            skyblue 100% 
-        );
         transform: rotate(0deg);
     }
 }
