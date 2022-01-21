@@ -70,19 +70,22 @@ html.is-leaving .transition-swipe {
 html.is-animating .btn {
   transform: translateX(1000px);
 }
-
-
-
-
-body{
-   min-height: 100vh;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   margin: 0;
-   background-color: black
   
-   
+  body {
+    color: #222;
+    background: #efe5df;
+    overflow: hidden;
+  }
+ 
+  /* Dark Mode styles */
+  body.dark-theme {
+    color: #eee;
+    background: #121212;
+  }
+  
+  body.dark-theme {
+    color: #121212;
+     
 }
 .write{
     width: 100%;
@@ -91,9 +94,20 @@ body{
     transform: translateX(-50px);
     justify-content: center;
     align-items: center;
-    margin: 0;
-   
-    
+    margin: 0; 
+}
+.btn-toggle{
+  background-color:transparent ;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 15px;
+  border: none;
+  color:#B2A89F;
+  padding: 7px 3px 2px; 
+  text-align: center; 
+  position: relative; 
+  display: inline-block; 
+  overflow: hidden; z-index: 3; 
+  white-space: nowrap;
 }
 :root {
     --squish-animation-time: 50ms;
@@ -106,9 +120,9 @@ body{
     position: relative;
     background: #000;
     border: white;
-    border-radius: 2px;
+   
     transform: rotate(-90deg);
-    border-radius: .125em;
+    border-radius: 10em;
     width: var(--btn-width);
     height: var(--btn-height);
     font-weight: bold;
